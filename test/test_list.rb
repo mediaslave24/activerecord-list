@@ -18,10 +18,10 @@ module ListTests
   def test_change_position
     assert_equal [1,2,3,4], Element.find(:all, order: "pos").map(&:id)
 
-    Element.find(2).move_up
+    Element.find(2).move_higher
     assert_equal [2,1,3,4], Element.find(:all, order: "pos").map(&:id)
 
-    Element.find(2).move_down
+    Element.find(2).move_lower
     assert_equal [1,2,3,4], Element.find(:all, order: "pos").map(&:id)
   end
 end
